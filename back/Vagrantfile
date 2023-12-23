@@ -52,6 +52,7 @@ Vagrant.configure("2") do |config|
         # Для диагностики гостевой машины через COM1 с Raw File
         v.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
         v.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
+        v.customize ["modifyvm", :id, "--cableconnected1", "on"]
         v.gui = false
         box_configs.call override
       end

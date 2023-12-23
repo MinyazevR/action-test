@@ -11,8 +11,8 @@ jobs:
       - name: Install Vagrant
         run: |
           brew tap
-          brew install hashicorp/tap/hashicorp-vagrant
-          vagrant plugin install vagrant-docker-compose
+          sudo brew install hashicorp/tap/hashicorp-vagrant
+          sudo vagrant plugin install vagrant-docker-compose
 
       - name: Install VirtualBox
         run: |
@@ -33,14 +33,14 @@ jobs:
           
       - name: Add box
         run: |
-          vagrant box add bento/ubuntu-22.04 --provider virtualbox
+          sudo vagrant box add bento/ubuntu-22.04 --provider virtualbox
       
       - name: Vagrant up
         run: |
           cd back
           export COMPOSE_PROFILES=redis,rabbitmq,celery
           export numberOfBoxes=1
-          vagrant up vbox1
+          sudo vagrant up vbox1
 
       - name: Checking the container
         run: |

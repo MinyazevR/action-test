@@ -1,0 +1,48 @@
+name: Vagrant
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Vagrant
+        run: |
+          brew tap
+          brew install hashicorp/tap/hashicorp-vagrant
+          vagrant plugin install vagrant-docker-compose
+
+      - name: Install VirtualBox
+        run: |
+          brew update
+          brew tap homebrew/cask
+          brew install --cask virtualbox
+          brew cleanup
+          
+      - name: Create environment file
+        run: |
+          mv ./back/dotenv-back-example ./back/.env
+
+      - name: Vagrant automation permissions
+        run: |
+          sudo cp ./back/autonfs /etc/sudoers.d/vagrant-syncedfolders
+          sudo chmod -R 0440 /etc/sudoers.d
+          sudo visudo -c
+          
+      - name: Add box
+        run: |
+          vagrant box add bento/ubuntu-22.04 --provider virtualbox
+      
+      - name: Vagrant up
+        run: |
+          cd back
+          export COMPOSE_PROFILES=redis,rabbitmq,celery
+          export numberOfBoxes=1
+          vagrant up vbox1
+
+      - name: Checking the container
+        run: |
+          vagrant ssh vbox1
+          docker exec -it celery bash

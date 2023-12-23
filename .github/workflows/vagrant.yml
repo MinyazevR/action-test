@@ -33,14 +33,14 @@ jobs:
           
       - name: Add box
         run: |
-          sudo vagrant box add bento/ubuntu-22.04 --provider virtualbox
+          vagrant box add bento/ubuntu-22.04 --provider virtualbox
       
       - name: Vagrant up
         run: |
           cd back
           export COMPOSE_PROFILES=redis,rabbitmq,celery
           export numberOfBoxes=1
-          vagrant up vbox1
+          sudo vagrant up vbox1
 
       - name: Checking the container
         run: |

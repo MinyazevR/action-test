@@ -50,6 +50,7 @@ jobs:
         run: |
           vagrant global-status
           cd back
+          export numberOfBoxes=1
           vagrant ssh vbox1
           ls
           docker compose -f docker-compose.staging.yml up -d --build

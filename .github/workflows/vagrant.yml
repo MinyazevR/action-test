@@ -10,6 +10,7 @@ jobs:
       - name: Install Vagrant
         run: |
           uname -a
+          brew cask remove vmware-fusion --verbose
           brew tap
           brew install hashicorp/tap/hashicorp-vagrant
           

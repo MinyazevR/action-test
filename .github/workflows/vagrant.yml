@@ -17,6 +17,7 @@ jobs:
           brew install --cask vmware-fusion
           sudo ln -s /Applications/VMWare\ Fusion\ Tech\ Preview.app /Applications/VMWare\ Fusion.app
           sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
+          sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility service install
           sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
           #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility api -debug
           #sudo mkdir -p /opt/vagrant-vmware-desktop/bin

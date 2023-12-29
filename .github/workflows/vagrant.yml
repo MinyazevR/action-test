@@ -44,7 +44,7 @@ jobs:
           
       - name: Add box
         run: |
-          vagrant box add bento/ubuntu-22.04 --provider vbox
+          vagrant box add bento/ubuntu-22.04 --provider virtualbox
 
       
       - name: Vagrant up

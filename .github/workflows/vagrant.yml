@@ -7,25 +7,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      # - name: Install Vagrant
-      #   run: |
-      #     uname -a
-      #     brew tap
-      #     brew install hashicorp/tap/hashicorp-vagrant
-      #     vagrant plugin install vagrant-docker-compose
-      #     brew install --cask vagrant-vmware-utility
-      #     vagrant plugin install vagrant-vmware-desktop
-      #     brew install --cask vmware-fusion
-      #     sudo ln -s /Applications/VMWare\ Fusion\ Tech\ Preview.app /Applications/VMWare\ Fusion.app
-      #     sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
-      #     #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility service install
-      #     sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
-      #     #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility api -debug
-      #     #sudo mkdir -p /opt/vagrant-vmware-desktop/bin
-      #     #sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.0_linux_amd64.zip
+      - name: Install Vagrant
+        run: |
+          uname -a
+          brew tap
+          brew install hashicorp/tap/hashicorp-vagrant
           
-
-
       - name: Install VirtualBox
         run: |
           brew update

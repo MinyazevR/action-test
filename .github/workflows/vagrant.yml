@@ -19,7 +19,6 @@ jobs:
           brew tap homebrew/cask
           brew install --cask virtualbox
           brew cleanup
-          vboxmanage list vms
           
       - name: Create environment file
         run: |

@@ -25,11 +25,11 @@ jobs:
         run: |
           mv ./back/dotenv-back-example ./back/.env
 
-      # - name: Vagrant automation permissions
-      #   run: |
-      #     sudo cp ./back/macos-autosmb /etc/sudoers.d/vagrant-syncedfolders
-      #     sudo chmod -R 0440 /etc/sudoers.d
-      #     sudo visudo -c
+      - name: Vagrant automation permissions
+        run: |
+          sudo cp ./back/macos-autosmb /etc/sudoers.d/vagrant-syncedfolders
+          sudo chmod -R 0440 /etc/sudoers.d
+          sudo visudo -c
           
       - name: Add box
         run: |

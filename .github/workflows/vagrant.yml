@@ -14,6 +14,8 @@ jobs:
           vagrant plugin install vagrant-docker-compose
           brew install --cask vagrant-vmware-utility
           vagrant plugin install vagrant-vmware-desktop
+          brew install --cask vmware-fusion
+          ln -s /Applications/VMWare\ Fusion\ Tech\ Preview.app /Applications/VMWare\ Fusion.app
           #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
           #sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
           sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility api -debug

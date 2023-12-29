@@ -15,7 +15,7 @@ jobs:
           brew install --cask vagrant-vmware-utility
           vagrant plugin install vagrant-vmware-desktop
           brew install --cask vmware-fusion
-          ln -s /Applications/VMWare\ Fusion\ Tech\ Preview.app /Applications/VMWare\ Fusion.app
+          sudo ln -s /Applications/VMWare\ Fusion\ Tech\ Preview.app /Applications/VMWare\ Fusion.app
           #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
           #sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
           sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility api -debug
@@ -23,12 +23,12 @@ jobs:
           #sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.0_linux_amd64.zip
           
 
-      - name: Install VirtualBox
-        run: |
-          brew update
-          brew tap homebrew/cask
-          brew install --cask virtualbox
-          brew cleanup
+      # - name: Install VirtualBox
+      #   run: |
+      #     brew update
+      #     brew tap homebrew/cask
+      #     brew install --cask virtualbox
+      #     brew cleanup
           
       - name: Create environment file
         run: |

@@ -9,7 +9,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Vagrant
         run: |
-          uname -a
           brew tap
           brew install hashicorp/tap/hashicorp-vagrant
           

@@ -48,5 +48,6 @@ jobs:
 
       - name: Checking the container
         run: |
+          vagrant global-status
           vagrant ssh vbox1
           docker exec -it celery bash

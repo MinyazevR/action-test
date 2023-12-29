@@ -41,6 +41,7 @@ jobs:
           cd back
           export COMPOSE_PROFILES=redis,rabbitmq,celery
           export numberOfBoxes=1
+          VBoxManage list runningvms
           #vagrant global-status | awk '/running/{print $1}' | xargs -r -d '\n' -n 1 -- vagrant suspen
           vagrant up vbox1
 

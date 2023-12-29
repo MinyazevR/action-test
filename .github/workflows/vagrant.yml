@@ -13,12 +13,12 @@ jobs:
       #     brew install hashicorp/tap/hashicorp-vagrant
 
 
-      # - name: Install VirtualBox
-      #   run: |
-      #     brew update
-      #     brew tap homebrew/cask
-      #     brew install --cask virtualbox
-      #     brew cleanup
+      - name: Install VirtualBox
+        run: |
+          brew update
+          brew tap homebrew/cask
+          brew install --cask virtualbox
+          brew cleanup
 
           
       - name: Create environment file

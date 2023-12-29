@@ -49,11 +49,11 @@ jobs:
 
       - name: Checking the container
         run: |
-          apt list --installed
           vagrant global-status
           cd back
           export numberOfBoxes=1
           vagrant ssh vbox1
           ls
+          apt list --installed
           docker compose -f docker-compose.staging.yml up -d --build
           docker exec -it celery bash

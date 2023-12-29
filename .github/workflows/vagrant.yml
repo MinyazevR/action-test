@@ -53,6 +53,6 @@ jobs:
           cd back
           export numberOfBoxes=1
           #vagrant ssh vbox1
-          vagrant ssh vbox1 -c "cd / && find . -type f | sort -V "
+          vagrant ssh vbox1 -c "cd / && find . -type f -name docker-compose.staging.yml | sort -V "
           vagrant ssh vbox1 -c "cd /home/vagrant && docker compose -f docker-compose.staging.yml up -d --build"
           vagrant ssh vbox1 -c  "docker exec -it celery bash"

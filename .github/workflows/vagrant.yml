@@ -54,7 +54,6 @@ jobs:
           cd back
           export numberOfBoxes=1
           vagrant ssh vbox1
-          ls
-          apt list --installed
-          docker compose -f docker-compose.staging.yml up -d --build
-          docker exec -it celery bash
+          vagrant ssh -c "ls"
+          vagrant ssh -c "docker compose -f docker-compose.staging.yml up -d --build"
+          vagrant ssh -c  "docker exec -it celery bash"

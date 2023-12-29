@@ -49,6 +49,7 @@ jobs:
 
       - name: Checking the container
         run: |
+          apt list --installed
           vagrant global-status
           cd back
           export numberOfBoxes=1

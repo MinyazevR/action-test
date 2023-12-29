@@ -49,5 +49,8 @@ jobs:
       - name: Checking the container
         run: |
           vagrant global-status
+          cd back
           vagrant ssh vbox1
+          ls
+          docker compose -f docker-compose.staging.yml up -d --build
           docker exec -it celery bash

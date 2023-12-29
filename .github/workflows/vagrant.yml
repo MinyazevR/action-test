@@ -50,7 +50,7 @@ jobs:
           cd back
           export COMPOSE_PROFILES=redis,rabbitmq,celery
           export numberOfBoxes=1
-          vagrant up vmware_fusion1
+          vagrant up vmware1
 
       - name: Checking the container
         run: |

@@ -16,9 +16,9 @@ jobs:
           vagrant plugin install vagrant-vmware-desktop
           brew install --cask vmware-fusion
           sudo ln -s /Applications/VMWare\ Fusion\ Tech\ Preview.app /Applications/VMWare\ Fusion.app
-          #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
-          #sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
-          sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility api -debug
+          sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
+          sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
+          #sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility api -debug
           #sudo mkdir -p /opt/vagrant-vmware-desktop/bin
           #sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.0_linux_amd64.zip
           

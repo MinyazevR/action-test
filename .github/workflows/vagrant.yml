@@ -35,7 +35,7 @@ jobs:
           
       - name: Add box
         run: |
-          vagrant box add bento/ubuntu-22.04 --provider virtualbox
+          vagrant box add bento/ubuntu-22.04 --provider vmware_desktop
 
       
       - name: Vagrant up
@@ -43,7 +43,7 @@ jobs:
           cd back
           export COMPOSE_PROFILES=redis,rabbitmq,celery
           export numberOfBoxes=1
-          vagrant up vbox1
+          vagrant up vmware1
 
       - name: Checking the container
         run: |

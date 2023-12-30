@@ -20,7 +20,6 @@ jobs:
           brew install --cask virtualbox
           brew cleanup
 
-          
       - name: Create environment file
         run: |
           mv ./back/dotenv-back-example ./back/.env

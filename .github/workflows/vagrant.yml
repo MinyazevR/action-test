@@ -33,7 +33,6 @@ jobs:
       - name: Add box
         run: |
           vagrant box add bento/ubuntu-22.04 --provider virtualbox
-          vagrant plugin install vagrant-scp
 
       
       - name: Vagrant up
@@ -46,7 +45,6 @@ jobs:
           #vagrant global-status | awk '/running/{print $1}' | xargs -r -d '\n' -n 1 -- vagrant suspen
           #vagrant halt vbox1
           vagrant up vbox1
-          vagrant scp ./back vbox1:/vagrant/
 
       - name: Checking the container
         run: |

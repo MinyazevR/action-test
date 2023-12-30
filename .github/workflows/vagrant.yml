@@ -26,10 +26,9 @@ jobs:
 
       - name: Vagrant automation permissions
         run: |
-          sudo cp ./back/debian-autonfs /etc/sudoers.d/vagrant-syncedfolders
+          sudo cp ./back/macos-autosmb /etc/sudoers.d/vagrant-syncedfolders
           sudo chmod -R 0440 /etc/sudoers.d
           sudo visudo -c
-          sudo systemctl status sudo.service
           
       - name: Add box
         run: |

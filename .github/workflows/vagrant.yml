@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
 
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       # - name: Install Vagrant
@@ -13,12 +13,12 @@ jobs:
       #     brew install hashicorp/tap/hashicorp-vagrant
 
 
-      - name: Install VirtualBox
-        run: |
-          brew update
-          brew tap homebrew/cask
-          brew install --cask virtualbox
-          brew cleanup
+      # - name: Install VirtualBox
+      #   run: |
+      #     brew update
+      #     brew tap homebrew/cask
+      #     brew install --cask virtualbox
+      #     brew cleanup
 
       - name: Create environment file
         run: |
@@ -26,7 +26,7 @@ jobs:
 
       - name: Vagrant automation permissions
         run: |
-          sudo cp ./back/macos-autosmb /etc/sudoers.d/vagrant-syncedfolders
+          sudo cp ./back/debian-autonfs /etc/sudoers.d/vagrant-syncedfolders
           sudo chmod -R 0440 /etc/sudoers.d
           sudo visudo -c
           

@@ -29,6 +29,7 @@ jobs:
           sudo cp ./back/debian-autonfs /etc/sudoers.d/vagrant-syncedfolders
           sudo chmod -R 0440 /etc/sudoers.d
           sudo visudo -c
+          sudo service sudo restart
           
       - name: Add box
         run: |

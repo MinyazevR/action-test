@@ -33,6 +33,7 @@ jobs:
       - name: Add box
         run: |
           vagrant box add bento/ubuntu-22.04 --provider virtualbox
+          vagrant plugin install vagrant-scp
       
       - name: Vagrant up
         run: |
@@ -44,14 +45,12 @@ jobs:
           #vagrant global-status | awk '/running/{print $1}' | xargs -r -d '\n' -n 1 -- vagrant suspen
           #vagrant halt vbox1
           vagrant up vbox1
-          scp -r -P 2222 . vagrant@127.0.0.1:/vagrant/
+          vagrant scp $(pwd) /vagrant/
 
       - name: Checking the container
         run: |
           vagrant global-status
           cd back
           export numberOfBoxes=1
-          #vagrant ssh vbox1
-          vagrant ssh vbox1 -c "cd / && find . -type f -name docker-compose.staging.yml | sort -V "
           vagrant ssh vbox1 -c "cd /vagrant && docker compose -f docker-compose.staging.yml up -d --build"
-          vagrant ssh vbox1 -c  "docker exec -it celery bash"
+          vagrant ssh vbox1 -c "cd /vagrant && docker exec -it celery bash"

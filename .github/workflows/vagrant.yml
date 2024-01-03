@@ -33,6 +33,7 @@ jobs:
         run: |
           vagrant box add bento/ubuntu-22.04 --provider virtualbox
           vagrant plugin install vagrant-scp
+
       
       - name: Vagrant up
         run: |

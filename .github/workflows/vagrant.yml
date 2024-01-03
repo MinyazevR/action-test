@@ -45,7 +45,8 @@ jobs:
           #vagrant global-status | awk '/running/{print $1}' | xargs -r -d '\n' -n 1 -- vagrant suspen
           #vagrant halt vbox1
           vagrant up vbox1
-          vagrant scp $(pwd) /home/vagrant/
+          vagrant global-status
+          vagrant scp $(pwd) /vagrant/
 
       - name: Checking the container
         run: |

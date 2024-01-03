@@ -46,7 +46,8 @@ jobs:
           #vagrant halt vbox1
           vagrant up vbox1
           vagrant global-status
-          vagrant scp $(pwd) /vagrant/
+          vagrant ssh vbox1 -c "ls -l /"
+          vagrant scp $(pwd) /home/
 
       - name: Checking the container
         run: |

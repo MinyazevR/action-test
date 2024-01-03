@@ -46,13 +46,13 @@ jobs:
           #vagrant halt vbox1
           vagrant up vbox1
           vagrant global-status
-          vagrant ssh vbox1 -c "cd /home && ls -l ."
-          sudo vagrant scp $(pwd) /home/vagrant/
+          sudo vagrant scp $(pwd) /home/vagrant/ 2>/dev/null
 
       - name: Checking the container
         run: |
           vagrant global-status
           cd back
           export numberOfBoxes=1
-          vagrant ssh vbox1 -c "cd /home/vagrant && docker compose -f docker-compose.staging.yml up -d --build"
-          vagrant ssh vbox1 -c "cd /home/vagrant && docker exec -it celery bash"
+          vagrant ssh vbox1 -c "cd /home/vagrant/back && ls -l ."
+          vagrant ssh vbox1 -c "cd /home/vagrant/back && docker compose -f docker-compose.staging.yml up -d --build"
+          vagrant ssh vbox1 -c "cd /home/vagrant/back && docker exec -it celery bash"

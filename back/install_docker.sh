@@ -20,8 +20,8 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo usermod -aG docker $USER
 newgrp docker
 
-sudo sysctl -w net.bridge.bridge-nf-call-iptables=0
-sudo sysctl -w net.bridge.bridge-nf-call-arptables=0
-sudo sysctl -w net.bridge.bridge-nf-call-ip6tables=0
+#sudo sysctl -w net.bridge.bridge-nf-call-iptables=0
+#sudo sysctl -w net.bridge.bridge-nf-call-arptables=0
+#sudo sysctl -w net.bridge.bridge-nf-call-ip6tables=0
 
 mkdir -p /vagrant
